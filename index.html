@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>熊出没</title>
-   <link rel="stylesheet" type="text/css"
+    <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.0/dist/css/bootstrap.min.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         header {
             background-color: rgba(255, 255, 255, 0.5);
             position: fixed;
@@ -173,6 +177,69 @@
                 margin-right: 10px;
             }
         }
+
+        /* 背景音乐播放器和留言板样式 */
+        .music-player-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        .guestbook {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .guestbook h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .guestbook form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guestbook label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .guestbook input,
+        .guestbook textarea {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .guestbook button {
+            align-self: flex-start;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .guestbook button:hover {
+            background-color: #0056b3;
+        }
+
+        .music-player {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -185,26 +252,19 @@
         <div class="header-right">
             <nav>
                 <ul class="menu">
-                    <li><a href="index.html" data-target="home">首页</a></li> 
+                    <li><a href="index.html" data-target="home">首页</a></li>
                     <li><a href="character.html" data-target="character">两熊一强</a></li>
                     <li><a href="movies.html" data-target="movies">一路走来</a></li>
                     <li><a href="pic.html" data-target="guestbook">熊出没回忆录</a></li>
                     <li><a href="game.html" data-target="game">完成童年的最后拼图吧</a></li>
-
                 </ul>
             </nav>
         </div>
     </header>
 
-
-
-
-
     <!-- 轮播图 -->
     <div class="slideshow">
         <div class="slide-container carousel-fade">
-           
-          
             <div class="">
                 <img class="slide d-block w-100" src="image/1-3.jpeg" alt="">
             </div>
@@ -229,97 +289,103 @@
             </a>
         </div>
     </div>
-    
     <!-- 轮播结束 -->
 
+    <!-- 背景音乐播放器和留言板 -->
+    <div class="music-player-container">
+        <div class="guestbook">
+            <h2>你好呀！</h2>
+            <form>
+                <label for="name">快告诉我你的名字吧</label>
+                <input type="text" id="name" name="name" required>
+                <label for="message">写下你想说的话吧:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">提交一下</button>
+            </form>
+        </div>
+        <div class="music-player">
+            <audio controls autoplay loop>
+                <source src="image/1.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+    </div>
 
-    
-    
     <script>
-    
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", function (event) {
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.querySelector('#left');
             const nextBtn = document.querySelector('#right');
             var indicators = document.querySelectorAll('.carousel-indicators li');
             let currentSlide = 0;
-          
+
             function showSlide(index) {
-              slides.forEach((slide) => {
-                slide.classList.remove('active');
-              });
-              
-              slides[index].classList.add('active');
-                          // 移除之前活动指示器的活动类
-                          document.querySelector('.carousel-indicators .active').classList.remove('active');
-                          // 将新的指示器项添加活动类
-                          indicators[index].classList.add('active');
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+                });
+
+                slides[index].classList.add('active');
+                // 移除之前活动指示器的活动类
+                document.querySelector('.carousel-indicators .active').classList.remove('active');
+                // 将新的指示器项添加活动类
+                indicators[index].classList.add('active');
             }
-          
+
             function nextSlide() {
-              currentSlide++;
-              if (currentSlide >= slides.length) {
-                currentSlide = 0;
-        
-              }
-          
-              showSlide(currentSlide);
+                currentSlide++;
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+
+                }
+
+                showSlide(currentSlide);
             }
             function prevSlide() {
-              currentSlide--;
-              if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-              }
-              showSlide(currentSlide);
+                currentSlide--;
+                if (currentSlide < 0) {
+                    currentSlide = slides.length - 1;
+                }
+                showSlide(currentSlide);
             }
-          
+
             showSlide(currentSlide); // 将第一张图片设为活动状态
-          
+
             // 调用nextSlide函数，每隔3秒切换到下一张图片
             setInterval(nextSlide, 5000);
-              function navigateToPage(pageId) {
-            // 隐藏当前显示的页面
-            const currentPage = document.querySelector('.page.active');
-            currentPage.classList.remove('active');
-          
-            // 显示目标页面
-            const targetPage = document.getElementById(pageId);
-            targetPage.classList.add('active');
-            
-            
-          }
-          // 点击下一个按钮时显示下一张幻灯片
-          nextBtn.addEventListener("click", function() {
-            nextSlide();
+            function navigateToPage(pageId) {
+                // 隐藏当前显示的页面
+                const currentPage = document.querySelector('.page.active');
+                currentPage.classList.remove('active');
+
+                // 显示目标页面
+                const targetPage = document.getElementById(pageId);
+                targetPage.classList.add('active');
+            }
+            // 点击下一个按钮时显示下一张幻灯片
+            nextBtn.addEventListener("click", function () {
+                nextSlide();
+            });
+
+            // 点击上一个按钮时显示上一张幻灯片
+            prevBtn.addEventListener("click", function () {
+                prevSlide();
+            });
+
+            // 点击指示器时显示对应的幻灯片
+            for (var i = 0; i < indicators.length; i++) {
+                (function (index) {
+                    indicators[i].addEventListener("click", function () {
+                        showSlide(index);
+                        currentSlide = index;
+                    });
+                })(i);
+            }
+
+            // 显示初始幻灯片
+            showSlide(currentSlide);
         });
-        
-        // 点击上一个按钮时显示上一张幻灯片
-        prevBtn.addEventListener("click", function() {
-            prevSlide();
-        });
-        
-        // 点击指示器时显示对应的幻灯片
-        for (var i = 0; i < indicators.length; i++) {
-            (function(index) {
-                indicators[i].addEventListener("click", function() {
-                    showSlide(index);
-                    currentSlide = index;
-                });
-            })(i);
-        }
-        
-        // 显示初始幻灯片
-        showSlide(currentSlide);
-          });
-        
-          
-        
-        
-        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    
 </body>
+
 </html>
