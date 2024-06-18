@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>熊出没</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body, html {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 999;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #000;
+        }
+
+        .plotpic {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .mid {
+            background-color: rgb(233, 216, 193, 0);
+            display: flex;
+            top: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            margin-top: 130px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 120vh;
+            width: 100%;
+            padding: 20px 40px 20px 40px;
+        }
+
+        .imgcow {
+            width: 90%;
+            height: 33vh;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(255, 255, 255, 0);
+        }
+
+        .imgcont {
+            border: 2px solid rgb(156, 156, 156);
+            height: 33vh;
+            width: 50vh;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            padding: 22px 22px;
+        }
+
+        .imgin {
+            height: 100%;
+            width: 100%;
+            transition: margin 2s, height 2s, width 2s;
+        }
+
+        .imgin.active {
+            z-index: 999999999;
+            margin: -22px -22px;
+            height: 124%;
+            width: 114%;
+        }
+
+        .pictur {
+            width: 100%;
+            height: 45%;
+        }
+
+        @media (max-width: 790px) {
+            header {
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                width: 10%;
+                top: 20%;
+                right: 3%;
+                margin: 10px 0;
+            }
+
+            .header-left {
+                display: none;
+            }
+
+            .header-right {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px;
+            }
+        }
+
+        @media (min-width: 790px) {
+            .logo {
+                position: relative;
+                width: 40px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left logo-container">
+            <img src="image/logo.png" alt="logo" class="logo">
+            <span class="brand">熊出没</span>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" data-target="home">首页</a></li>
+                    <li><a href="character.html" data-target="character">两熊一强</a></li>
+                    <li><a href="movies.html" data-target="movies">一路走来</a></li>
+                    <li><a href="pic.html" data-target="guestbook">熊出没大家庭</a></li>
+                    <li><a href="game.html" data-target="game">完成童年的最后拼图吧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 背景 -->
+    <div class="">
+        <img class="plotpic" src="image/picback.png" alt="">
+    </div>
+
+    <!-- 中间图片 -->
+    <div class="mid">
+        <div class="imgcow">
+            <div class="imgcont"><img class="imgin" src="image/one.jpeg" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-2.jpg" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-3.jpg" alt=""></div>
+        </div>
+        <div class="imgcow">
+            <div class="imgcont"><img class="imgin" src="image/3-5.png" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-6.png" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-7.png" alt=""></div>
+        </div>
+        <div class="imgcow">
+            <div class="imgcont"><img class="imgin" src="image/3-8.jpg" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-9.png" alt=""></div>
+            <div class="imgcont"><img class="imgin" src="image/3-10.png" alt=""></div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <img src="image/圆角矩形 1.png" alt="">
+    </div>
+
+    <script>
+        const imgElements = document.querySelectorAll('.imgin');
+        imgElements.forEach((img) => {
+            img.addEventListener('click', () => {
+                img.classList.add('active');
+                setTimeout(() => {
+                    img.classList.remove('active');
+                }, 2000);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

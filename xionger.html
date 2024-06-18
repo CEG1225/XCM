@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊出没</title>
+
+    <link rel="stylesheet" type="text/css" href="css/every.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.0/dist/css/bootstrap.min.css">
+    <style>
+        header {
+            background-color: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 999;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #000;
+        }
+
+        @media (max-width: 790px) {
+            header {
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                width: 10%;
+                top: 20%;
+                right: 3%;
+                margin: 10px 0;
+            }
+
+            .header-left {
+                display: none;
+            }
+
+            .header-right {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px;
+            }
+        }
+
+        @media (min-width: 790px) {
+            .logo {
+                position: relative;
+                width: 40px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left logo-container">
+            <img src="image/logo.png" alt="logo" class="logo">
+            <span class="brand">熊出没</span>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" data-target="home">首页</a></li>
+                    <li><a href="character.html" data-target="character">两熊一强</a></li>
+                    <li><a href="movies.html" data-target="movies">一路走来</a></li>
+                    <li><a href="pic.html" data-target="guestbook">熊出没回忆录</a></li>
+                    <li><a href="game.html" data-target="game">完成童年的最后拼图吧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 背景-->
+    <div class="plotpic"></div>
+    <!-- 背景结束-->
+
+    <!-- 中间！！ -->
+    <div class="everybody">
+        <!-- 左侧按钮 -->
+        <div class="everyleft">
+            <a href="xiongda.html"><button class="but">熊大</button></a>
+            <a href="xionger.html"><button class="but">熊二</button></a>
+            <a href="qiang.html"><button class="but">光头强</button></a>
+        </div>
+
+        <div class="everyright">
+            <!-- 左边人物图 -->
+            <div class="paperleft">
+                <img class="renwuimg" src="image/熊二11.png" alt="">
+            </div>
+            <!-- 右边文字+图片 -->
+            <div class="paperright">
+                <!-- 上方图片序列 -->
+                <div class="imgul">
+                    <img class="imgli" src="image/熊二1.png" alt="">
+                    <img class="imgli" src="image/熊二2.jpeg" alt="">
+                    <img class="imgli" src="image/熊二3.png" alt="">
+                </div>
+                <!-- 下方文字段落 -->
+                <div class="paperend">
+                    <p1>熊二</p1>
+                    <p>
+                        能二是比较强壮的狗熊。他比较聪明，偶尔是熊大想出来的决策，虽然他的体型很胖胜于熊大，但力气超大，熊大无法抵挡。他还非常善良，心很软，也会为光头强感到可怜(在熊出没之过年中，正是他带头帮助了光头强，如果不是他，那等到猴年马月光头强都回不了家了)。熊二一般情况下非常善良，特别是那婉转的腔调。
+                    </p>
+                    <p>
+                        能二是一头憨厚可爱、力大无穷的雄性狗熊，虽然十分鲁莽，但有时熊大不在时小动物们落难，熊二都会挺身而出。熊二有着接近金黄色的毛，鼻子深蓝色，嘴边一圈的颜色是棕色。走起路来驼着身子却很可爱，忠厚老实，有时被光头强抓住，都是熊大救他。第一部在丛林，第二部前期认识了更多动物，后期来到小镇，第三部回到丛林。熊出没之过年熊大能二送光头强回家，熊出没之年货能大熊二光头强和动物们一起对抗伐木机器人，熊出没之本宝熊兵熊二和熊大光头强一起照顾哪哪，《熊出没之雪岭熊风》拯教了整个雪岭，也接救了大家。熊出没之熊心归来中，为寻找熊大，不费千辛万苦，成为了一个至关重要的人物。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 中间结束！！ -->
+
+    <script>
+    
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('#left');
+            const nextBtn = document.querySelector('#right');
+            var indicators = document.querySelectorAll('.carousel-indicators li');
+            let currentSlide = 0;
+          
+            function showSlide(index) {
+              slides.forEach((slide) => {
+                slide.classList.remove('active');
+              });
+              
+              slides[index].classList.add('active');
+                          // 移除之前活动指示器的活动类
+                          document.querySelector('.carousel-indicators .active').classList.remove('active');
+                          // 将新的指示器项添加活动类
+                          indicators[index].classList.add('active');
+            }
+          
+            function nextSlide() {
+              currentSlide++;
+              if (currentSlide >= slides.length) {
+                currentSlide = 0;
+        
+              }
+          
+              showSlide(currentSlide);
+            }
+            function prevSlide() {
+              currentSlide--;
+              if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+              }
+              showSlide(currentSlide);
+            }
+          
+            showSlide(currentSlide); // 将第一张图片设为活动状态
+          
+            // 调用nextSlide函数，每隔3秒切换到下一张图片
+            setInterval(nextSlide, 3000);
+              function navigateToPage(pageId) {
+            // 隐藏当前显示的页面
+            const currentPage = document.querySelector('.page.active');
+            currentPage.classList.remove('active');
+          
+            // 显示目标页面
+            const targetPage = document.getElementById(pageId);
+            targetPage.classList.add('active');
+            
+            
+          }
+          // 点击下一个按钮时显示下一张幻灯片
+          nextBtn.addEventListener("click", function() {
+            nextSlide();
+        });
+        
+        // 点击上一个按钮时显示上一张幻灯片
+        prevBtn.addEventListener("click", function() {
+            prevSlide();
+        });
+        
+        // 点击指示器时显示对应的幻灯片
+        for (var i = 0; i < indicators.length; i++) {
+            (function(index) {
+                indicators[i].addEventListener("click", function() {
+                    showSlide(index);
+                    currentSlide = index;
+                });
+            })(i);
+        }
+        
+        // 显示初始幻灯片
+        showSlide(currentSlide);
+          });
+        
+          
+        
+        
+        
+           </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 其他页面内容 -->
+</body>
+
+</html>
